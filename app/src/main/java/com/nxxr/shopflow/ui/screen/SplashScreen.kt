@@ -1,7 +1,9 @@
 package com.nxxr.shopflow.ui.screen
 
 import androidx.compose.animation.core.Animatable
+import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.keyframes
@@ -36,47 +38,65 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.text.TextStyle
-import com.nxxr.shopflow.ui.theme.background
+import com.nxxr.shopflow.ui.theme.background // Assuming this is your app's main dark background
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController // For Preview purposes
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
+
 
 @Composable
 fun SplashScreen(
     onTimeout: () -> Unit
 ) {
+    val logoScale = remember { Animatable(0.7f) } // Initial scale for a subtle zoom in
     val logoAlpha = remember { Animatable(0f) }
 
     // Launch effect for delay and animation
     LaunchedEffect(Unit) {
-        logoAlpha.animateTo(1f, animationSpec = tween(durationMillis = 1000))
-        delay(2000)
+        // Parallel animations for a smoother entrance
+        launch {
+            logoScale.animateTo(1f, animationSpec = tween(durationMillis = 1500, easing = FastOutSlowInEasing))
+        }
+        launch {
+            logoAlpha.animateTo(1f, animationSpec = tween(durationMillis = 1000, easing = LinearEasing))
+        }
+
+        delay(2500)
         onTimeout()
     }
 
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF101010)), // deep black
+            .background(Color(0xFF101010)),
         contentAlignment = Alignment.Center
     ) {
         Column(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            // Brand Logo or Icon (SVG/vector preferred)
             Image(
-                painter = painterResource(id = R.drawable.ic_launcher_foreground),
+                painter = painterResource(id = R.drawable.shopping_cart),
                 contentDescription = "App Logo",
                 modifier = Modifier
-                    .size(120.dp)
-                    .alpha(logoAlpha.value)
+                    .size(160.dp)
+                    .graphicsLayer(
+                        scaleX = logoScale.value,
+                        scaleY = logoScale.value,
+                        alpha = logoAlpha.value
+                    )
             )
 
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(24.dp))
+            ShimmerText(
+                text = "Elevate Your Glow",
 
-            // Brand tagline
-            ShimmerText(text = "Elevate Your Glow", style = MaterialTheme.typography.titleMedium)
+                style = MaterialTheme.typography.titleLarge.copy(fontWeight = FontWeight.Medium)
+            )
 
-            Spacer(modifier = Modifier.height(32.dp))
+            Spacer(modifier = Modifier.height(48.dp))
 
             // Subtle loading dot animation
             DotsLoadingIndicator()
@@ -87,29 +107,33 @@ fun SplashScreen(
 @Composable
 fun ShimmerText(text: String, style: TextStyle) {
     val shimmerColors = listOf(
-        Color.LightGray.copy(alpha = 0.6f),
-        Color.White,
-        Color.LightGray.copy(alpha = 0.6f)
+        Color.White.copy(alpha = 0.2f),
+        Color.White.copy(alpha = 0.5f),
+        Color.White.copy(alpha = 0.2f)
     )
 
-    val transition = rememberInfiniteTransition()
+    val transition = rememberInfiniteTransition(label = "shimmerTransition")
     val translateAnim = transition.animateFloat(
         initialValue = 0f,
         targetValue = 1000f,
         animationSpec = infiniteRepeatable(
-            animation = tween(1000, easing = LinearEasing)
-        )
+            animation = tween(1500, easing = LinearEasing),
+            repeatMode = RepeatMode.Reverse
+        ), label = "shimmerTranslate"
     )
 
-    val brush = Brush.linearGradient(
-        colors = shimmerColors,
-        start = Offset.Zero,
-        end = Offset(x = translateAnim.value, y = translateAnim.value)
-    )
+
+    val brush = remember(translateAnim.value) {
+        Brush.linearGradient(
+            colors = shimmerColors,
+            start = Offset(x = translateAnim.value - 600f, y = 0f),
+            end = Offset(x = translateAnim.value, y = 0f)
+        )
+    }
 
     Text(
         text = text,
-        style = style,
+        style = style.copy(color = Color.White),
         modifier = Modifier
             .padding(horizontal = 16.dp)
             .graphicsLayer(alpha = 0.99f)
@@ -117,11 +141,10 @@ fun ShimmerText(text: String, style: TextStyle) {
     )
 }
 
-
 @Composable
 fun DotsLoadingIndicator() {
     val dotCount = 3
-    val delayUnit = 300
+    val delayUnit = 200 // Slightly faster individual dot animation
     val animatedValues = List(dotCount) { remember { Animatable(0f) } }
 
     LaunchedEffect(Unit) {
@@ -134,23 +157,32 @@ fun DotsLoadingIndicator() {
                         animation = keyframes {
                             durationMillis = 900
                             0f at 0
-                            1f at 300
+                            0.7f at 300
                             0f at 600
-                        }
+                            0f at 900
+                        },
+                        repeatMode = RepeatMode.Restart
                     )
                 )
             }
         }
     }
 
-    Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+    Row(horizontalArrangement = Arrangement.spacedBy(10.dp)) {
         animatedValues.forEach { anim ->
             Box(
                 modifier = Modifier
-                    .size(10.dp)
+                    .size(12.dp)
                     .clip(CircleShape)
-                    .background(Color(0xFFB9F227).copy(alpha = anim.value))
+                    .background(Color(0xFFB5FF48).copy(alpha = anim.value))
             )
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun SplashScreenPreview() {
+    // For previewing, provide a dummy onTimeout
+    SplashScreen(onTimeout = { /* Do nothing for preview */ })
 }
