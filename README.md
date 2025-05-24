@@ -2,15 +2,6 @@
 
 **ShopFlow** is a modern, clean eCommerce UI built entirely using **Kotlin** and **Jetpack Compose**. This UI showcases a promotional banner and elegant product listing cards with dynamic layouts, all designed as part of the **D4C Android Internship Task**.
 
----
-
-## 📸 Screenshots
-
-### 🎯 Promo Banner  
-<img src="screenshots/banner.png" width="300" />
-
-### 🛒 Product Item Card  
-<img src="screenshots/product_card.png" width="300" />
 
 ---
 
