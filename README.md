@@ -46,9 +46,10 @@ com.nxxr.shopflow/
 ---
 
 ## Screenshots 📸
-!["Splash Screen"](/assets/splash_screen.png)
-!["Shop Flow Screen"](/assets/shop_flow_screen.png)
-!["Item Card"](/assets/item_card.png)
+!["Splash Screen"](/assets/splash_screen.jpg)
+!["Shop Flow Screen"](/assets/shop_flow_screen.jpg)
+!["Shop Flow Screen"](/assets/shop_flow_screen_2.jpg)
+!["Item Card"](/assets/item_card.jpg)
 
 
 ---
