@@ -46,11 +46,19 @@ com.nxxr.shopflow/
 ---
 
 ## Screenshots 📸
-<a href="url"><img src="/assets/splash_screen.jpg" align="left"  width="48" ></a>
-!["Splash Screen"](/assets/splash_screen.jpg)
-!["Shop Flow Screen"](/assets/shop_flow_screen.jpg)
-!["Shop Flow Screen"](/assets/shop_flow_screen_2.jpg)
-!["Item Card"](/assets/item_card.jpg)
+
+Splash Screen
+<a href="url"><img src="/assets/splash_screen.jpg" align="left"  width="64" ></a>
+
+ShopFlow Screen
+<a href="url"><img src="/assets/shop_flow_screen.jpg" align="left"  width="64" ></a>
+
+ShopFlow Screen Continued
+<a href="url"><img src="/assets/shop_flow_screen_2.jpg" align="left"  width="64" ></a>
+
+Product Item Card
+<a href="url"><img src="/assets/item_card.jpg" align="left"  width="64" ></a>
+
 
 
 ---
