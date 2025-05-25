@@ -63,7 +63,7 @@ com.nxxr.shopflow/
 ## 🧑‍💻 Author
 
 **nxxr**  
-📧 your.email@example.com  
+📧 arshnoorb7@gmail.com  
 🌐 [GitHub](https://github.com/nxxr-07) ・ [LinkedIn](https://linkedin.com/in/arshnxxr)
 
 ---
