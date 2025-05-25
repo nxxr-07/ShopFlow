@@ -45,6 +45,14 @@ com.nxxr.shopflow/
 
 ---
 
+## Screenshots 📸
+!["Splash Screen"](/assets/splash_screen.png)
+!["Shop Flow Screen"](/assets/shop_flow_screen.png)
+!["Item Card"](/assets/item_card.png)
+
+
+---
+
 ## 🧑‍💻 Author
 
 **nxxr**  
@@ -58,4 +66,3 @@ com.nxxr.shopflow/
 This project is submitted as part of the **Android Internship Task** for [D4C](https://sites.google.com/view/task-d4c).
 
 ---
-```
