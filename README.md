@@ -46,6 +46,7 @@ com.nxxr.shopflow/
 ---
 
 ## Screenshots 📸
+<a href="url"><img src="/assets/splash_screen.jpg" align="left"  width="48" ></a>
 !["Splash Screen"](/assets/splash_screen.jpg)
 !["Shop Flow Screen"](/assets/shop_flow_screen.jpg)
 !["Shop Flow Screen"](/assets/shop_flow_screen_2.jpg)
