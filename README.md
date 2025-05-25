@@ -1,34 +1,33 @@
 # 🛍️ ShopFlow – Android Internship Task (D4C)
 
-**ShopFlow** is a modern, clean eCommerce UI built entirely using **Kotlin** and **Jetpack Compose**. This UI showcases a promotional banner and elegant product listing cards with dynamic layouts, all designed as part of the **D4C Android Internship Task**.
-
+**ShopFlow** is a sleek, modern eCommerce UI built entirely using **Kotlin** and **Jetpack Compose**. It features a promotional banner and elegant product listing cards with dynamic layouts, created as part of the **D4C Android Internship Task**.
 
 ---
 
 ## 🚀 Features
 
-- ✅ 100% Jetpack Compose (no XML)
-- 🎨 Material 3 theming and design
-- 📦 Product cards with stock badges, prices, ratings, and cart icon
-- 🖼️ Promo banner with stylish background
-- 🧼 Clean architecture and modular code
+- ✅ Fully built with Jetpack Compose (no XML)
+- 🎨 Material 3 design and theming
+- 📦 Product cards with stock status, prices, ratings, and cart button
+- 🖼️ Promo banner with stylish design
+- 🧼 Clean architecture and modular components
 
 ---
 
 ## 🛠️ Tech Stack
 
-| Tech              | Description                             |
-|-------------------|-----------------------------------------|
-| **Kotlin**        | Modern Android language                 |
-| **Jetpack Compose** | Declarative UI toolkit                |
-| **Material 3**    | Design system for modern UI             |
-| **Android Studio**| Recommended IDE (Giraffe or later)      |
+| Tech               | Description                            |
+|--------------------|----------------------------------------|
+| **Kotlin**         | Modern Android programming language    |
+| **Jetpack Compose**| Declarative UI toolkit for Android     |
+| **Material 3**     | Google's latest UI design system       |
+| **Android Studio** | Preferred IDE (Giraffe or later)       |
 
 ---
 
 ## 📂 Project Structure
 
-```
+```bash
 com.nxxr.shopflow/
 ├── model/
 │   └── ProductModel.kt
@@ -45,34 +44,32 @@ com.nxxr.shopflow/
 
 ---
 
-## Screenshots 📸
+## 📸 Screenshots
 
-Splash Screen
-<a href="url"><img src="/assets/splash_screen.jpg" align="left"  width="64" ></a>
+#### 🟣 Splash Screen
+<img src="/assets/splash_screen.jpg" width="300" />
 
-ShopFlow Screen
-<a href="url"><img src="/assets/shop_flow_screen.jpg" align="left"  width="64" ></a>
+#### 🛍️ ShopFlow Screen
+<img src="/assets/shop_flow_screen.jpg" width="300" />
 
-ShopFlow Screen Continued
-<a href="url"><img src="/assets/shop_flow_screen_2.jpg" align="left"  width="64" ></a>
+#### 📄 ShopFlow Screen Continued
+<img src="/assets/shop_flow_screen_2.jpg" width="300" />
 
-Product Item Card
-<a href="url"><img src="/assets/item_card.jpg" align="left"  width="64" ></a>
-
-
+#### 🛒 Product Item Card
+<img src="/assets/item_card.jpg" width="300" />
 
 ---
 
 ## 🧑‍💻 Author
 
 **nxxr**  
-📧 [your.email@example.com]  
-🌐 [GitHub](https://github.com/nxxr-07) | [LinkedIn](https://linkedin.com/in/arshnxxr)
+📧 your.email@example.com  
+🌐 [GitHub](https://github.com/nxxr-07) ・ [LinkedIn](https://linkedin.com/in/arshnxxr)
 
 ---
 
 ## 📬 Submission
 
-This project is submitted as part of the **Android Internship Task** for [D4C](https://sites.google.com/view/task-d4c).
+This project was submitted as part of the **Android Internship Task** for [D4C](https://sites.google.com/view/task-d4c).
 
 ---
